@@ -1,4 +1,4 @@
-namespace HotchocolateEndpoint.Queries;
+namespace HotchocolateEndpoint.Schema.Queries;
 
 public class InstructorType
 {

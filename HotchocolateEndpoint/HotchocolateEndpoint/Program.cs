@@ -1,4 +1,6 @@
-using HotchocolateEndpoint.Queries;
+using HotchocolateEndpoint.Schema;
+using HotchocolateEndpoint.Schema.Mutations;
+using HotchocolateEndpoint.Schema.Queries;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +13,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services
     .AddGraphQLServer()
-    .AddQueryType<Query>();
+    .AddQueryType<Query>()
+    .AddMutationType<Mutation>();
 
 var app = builder.Build();
 
