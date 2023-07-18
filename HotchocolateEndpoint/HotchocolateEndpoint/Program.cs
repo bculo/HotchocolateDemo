@@ -1,6 +1,7 @@
 using HotchocolateEndpoint.Schema;
 using HotchocolateEndpoint.Schema.Mutations;
 using HotchocolateEndpoint.Schema.Queries;
+using HotchocolateEndpoint.Schema.Subscriptions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +15,9 @@ builder.Services.AddSwaggerGen();
 builder.Services
     .AddGraphQLServer()
     .AddQueryType<Query>()
-    .AddMutationType<Mutation>();
+    .AddMutationType<Mutation>()
+    .AddSubscriptionType<Subscription>()
+    .AddInMemorySubscriptions();
 
 var app = builder.Build();
 
@@ -28,6 +31,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseWebSockets();
 
 app.MapControllers();
 app.MapGraphQL();

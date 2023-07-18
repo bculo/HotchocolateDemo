@@ -2,10 +2,9 @@ using HotchocolateEndpoint.Schema.Queries;
 
 namespace HotchocolateEndpoint.Schema.Mutations;
 
-public class CourseResult
+public class CourseInputType
 {
     public string Name { get; set; }
     public Subject Subject { get; set; }
-    public Guid Id { get; set; }
-    public Guid InstructorId { get; set; }
+    public Guid InstructionId { get; set; }
 }
