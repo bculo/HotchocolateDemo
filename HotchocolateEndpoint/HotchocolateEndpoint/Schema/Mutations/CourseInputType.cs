@@ -1,3 +1,4 @@
+using HotchocolateEndpoint.Enums;
 using HotchocolateEndpoint.Schema.Queries;
 
 namespace HotchocolateEndpoint.Schema.Mutations;
